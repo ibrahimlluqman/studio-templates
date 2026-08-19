@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Studio Templates — Canva Templates</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#">STUDIO<span>.</span></a>
+  <nav>
+    <a href="#home" data-i18n="home">الرئيسية</a>
+    <a href="#store" data-i18n="store">المتجر</a>
+    <a href="#bundles" data-i18n="bundles">الباقات</a>
+    <a href="#about" data-i18n="about">من نحن</a>
+    <a href="#contact" data-i18n="contact">تواصل معنا</a>
+  </nav>
+  <div class="actions">
+    <select id="lang" aria-label="Language">
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+      <option value="ku">کوردی</option>
+    </select>
+    <button id="cartBtn" class="cart">🛒 <span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div>
+    <span class="eyebrow" data-i18n="eyebrow">DIGITAL CREATIVE STUDIO</span>
+    <h1 data-i18n="heroTitle">تصاميم جاهزة.<br>عدّلها بطريقتك.</h1>
+    <p data-i18n="heroText">قوالب Canva احترافية تساعدك على إنشاء محتوى مميز خلال دقائق.</p>
+    <div class="heroBtns">
+      <a class="btn primary" href="#store" data-i18n="browse">تصفح التصاميم</a>
+      <a class="btn secondary" href="#bundles" data-i18n="explore">اكتشف الباقات</a>
+    </div>
+  </div>
+  <div class="mockups">
+    <div class="mock m1"><b>REELS</b><small>CREATIVE<br>CONTENT</small></div>
+    <div class="mock m2"><b>INSTAGRAM</b><small>MAKE IT<br>YOUR OWN</small></div>
+    <div class="mock m3"><b>ADS</b><small>SELL<br>SMARTER</small></div>
+  </div>
+</section>
+
+<section class="section" id="store">
+  <div class="sectionHead"><div><span class="eyebrow">SHOP</span><h2 data-i18n="best">الأكثر طلبًا</h2></div>
+  <input id="search" type="search" placeholder="ابحث عن تصميم..." aria-label="Search"></div>
+  <div class="categories">
+    <button class="active" data-cat="all" data-i18n="all">الكل</button>
+    <button data-cat="instagram">Instagram</button><button data-cat="reels">Reels</button>
+    <button data-cat="ads" data-i18n="ads">إعلانات</button><button data-cat="business" data-i18n="business">أعمال</button>
+  </div>
+  <div id="products" class="grid"></div>
+</section>
+
+<section class="features">
+  <div><strong>⚡</strong><h3 data-i18n="fast">توفير الوقت</h3><p data-i18n="fastText">ابدأ من قالب جاهز بدلًا من الصفر.</p></div>
+  <div><strong>🎨</strong><h3 data-i18n="pro">تصاميم احترافية</h3><p data-i18n="proText">هوية بصرية عصرية وقابلة للتعديل.</p></div>
+  <div><strong>✏️</strong><h3 data-i18n="easy">سهلة التعديل</h3><p data-i18n="easyText">عدّل النصوص والألوان والصور في Canva.</p></div>
+  <div><strong>📱</strong><h3 data-i18n="social">للسوشيال ميديا</h3><p data-i18n="socialText">مقاسات مناسبة للمحتوى الرقمي.</p></div>
+</section>
+
+<section id="bundles" class="section bundles">
+  <div class="sectionHead"><div><span class="eyebrow">BUNDLES</span><h2 data-i18n="bundleTitle">اختر الباقة المناسبة لك</h2></div></div>
+  <div class="bundleGrid">
+    <article><span>STARTER</span><b>10</b><small>Templates</small><button class="btn secondary" onclick="addBundle('Starter Bundle',9)">شراء — $9</button></article>
+    <article class="featured"><em data-i18n="popular">الأكثر مبيعًا</em><span>PRO</span><b>30</b><small>Templates</small><button class="btn primary" onclick="addBundle('Pro Bundle',19)">شراء — $19</button></article>
+    <article><span>ULTIMATE</span><b>60+</b><small>Templates</small><button class="btn secondary" onclick="addBundle('Ultimate Bundle',35)">شراء — $35</button></article>
+  </div>
+</section>
+
+<section class="how section">
+  <span class="eyebrow">HOW IT WORKS</span><h2 data-i18n="howTitle">كيف تحصل على التصميم؟</h2>
+  <div class="steps"><div><b>01</b><h3 data-i18n="step1">اختر التصميم</h3></div><div><b>02</b><h3 data-i18n="step2">ادفع بأمان</h3></div><div><b>03</b><h3 data-i18n="step3">استلم رابط Canva</h3></div></div>
+</section>
+
+<section id="about" class="about section"><div><span class="eyebrow">ABOUT</span><h2 data-i18n="aboutTitle">نصمم لك نقطة بداية أفضل.</h2></div><p data-i18n="aboutText">متجر رقمي للقوالب الاحترافية لأصحاب المشاريع وصناع المحتوى والمسوقين. عدّل القالب في Canva واجعله مناسبًا لعلامتك.</p></section>
+</main>
+
+<footer id="contact"><div class="logo">STUDIO<span>.</span></div><p data-i18n="footer">قوالب رقمية احترافية لصناعة محتوى أفضل.</p><div>Instagram · TikTok · WhatsApp</div><small>© 2026 Studio Templates</small></footer>
+
+<div id="cartPanel" class="overlay"><div class="cartPanel"><button class="close" onclick="closeCart()">×</button><h2 data-i18n="cartTitle">سلة المشتريات</h2><div id="cartItems"></div><div class="total"><span data-i18n="total">الإجمالي</span><b id="total">$0</b></div><button class="btn primary full" onclick="checkout()" data-i18n="checkout">إتمام الشراء</button><p class="note" data-i18n="paymentNote">هذه نسخة تجريبية. اربط بوابة الدفع قبل الإطلاق.</p></div></div>
+<script src="script.js"></script>
+</body></html>
