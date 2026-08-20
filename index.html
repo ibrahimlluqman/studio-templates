@@ -1,86 +1,754 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Studio Templates — Canva Templates</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#050711">
+
+  <title>i.b2002 | Di nêzîk de</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+
+    /* =========================
+       BODY
+    ========================= */
+
+    body {
+
+      font-family: "Cairo", sans-serif;
+
+      background: #050711;
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      position: relative;
+    }
+
+
+    /* =========================
+       BACKGROUND LIGHT
+    ========================= */
+
+    body::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: -30%;
+
+      background:
+
+        radial-gradient(
+          circle at 50% 45%,
+          rgba(73, 102, 255, 0.18),
+          transparent 25%
+        ),
+
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(0, 221, 255, 0.10),
+          transparent 22%
+        ),
+
+        radial-gradient(
+          circle at 80% 75%,
+          rgba(139, 92, 246, 0.10),
+          transparent 25%
+        );
+
+      filter: blur(30px);
+
+      animation:
+        ambient 9s ease-in-out infinite alternate;
+    }
+
+
+    /* =========================
+       GRID
+    ========================= */
+
+    .grid {
+
+      position: absolute;
+
+      inset: 0;
+
+      opacity: 0.16;
+
+      background-image:
+
+        linear-gradient(
+          rgba(255,255,255,0.06) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.06) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          transparent,
+          black 25%,
+          black 75%,
+          transparent
+        );
+    }
+
+
+    /* =========================
+       DECORATIVE ORBS
+    ========================= */
+
+    .orb {
+
+      position: absolute;
+
+      width: 260px;
+
+      height: 260px;
+
+      border: 1px solid rgba(116,142,255,0.18);
+
+      border-radius: 50%;
+
+      animation:
+        float 8s ease-in-out infinite;
+    }
+
+    .orb.one {
+
+      top: -90px;
+
+      right: -80px;
+    }
+
+    .orb.two {
+
+      bottom: -130px;
+
+      left: -90px;
+
+      animation-delay: -3s;
+    }
+
+    .orb::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 28px;
+
+      border: 1px solid rgba(116,142,255,0.10);
+
+      border-radius: 50%;
+    }
+
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    .content {
+
+      position: relative;
+
+      z-index: 2;
+
+      width: min(900px, 90vw);
+
+      text-align: center;
+
+      padding: 40px 20px;
+    }
+
+
+    /* =========================
+       LOGO / BRAND
+    ========================= */
+
+    .brand {
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size:
+        clamp(18px, 2.3vw, 28px);
+
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      color: white;
+
+      margin-bottom: 34px;
+
+      opacity: 0;
+
+      transform: translateY(-18px);
+
+      animation:
+        enter 0.9s 0.15s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+    }
+
+    .brand span {
+
+      display: inline-block;
+
+      color: #7c8cff;
+
+      animation:
+        pulse 2.4s ease-in-out infinite;
+    }
+
+
+    /* =========================
+       LINE
+    ========================= */
+
+    .line {
+
+      width: 0;
+
+      height: 1px;
+
+      margin: 0 auto 38px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #7c8cff,
+          transparent
+        );
+
+      animation:
+        lineIn 1.1s 0.55s ease forwards;
+    }
+
+
+    /* =========================
+       MAIN TITLE
+    ========================= */
+
+    .title {
+
+      font-size:
+        clamp(48px, 9vw, 105px);
+
+      line-height: 1.08;
+
+      font-weight: 700;
+
+      letter-spacing: -0.045em;
+
+      margin-bottom: 18px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #b9c1ff 48%,
+          #ffffff 100%
+        );
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+
+      color: transparent;
+
+      background-size: 220% auto;
+
+      opacity: 0;
+
+      transform: translateY(20px);
+
+      animation:
+
+        titleIn 1s 0.8s
+        cubic-bezier(.2,.8,.2,1)
+        forwards,
+
+        shimmer 5s 2s linear infinite;
+    }
+
+
+    /* =========================
+       SUBTITLE
+    ========================= */
+
+    .subtitle {
+
+      color: #a6adc4;
+
+      font-size:
+        clamp(14px, 2vw, 18px);
+
+      font-weight: 400;
+
+      opacity: 0;
+
+      animation:
+        fadeIn 1s 1.25s ease forwards;
+    }
+
+
+    /* =========================
+       LOADER
+    ========================= */
+
+    .loader {
+
+      width: 170px;
+
+      height: 3px;
+
+      margin: 34px auto 0;
+
+      border-radius: 99px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      overflow: hidden;
+
+      opacity: 0;
+
+      animation:
+        fadeIn 1s 1.5s ease forwards;
+    }
+
+    .loader span {
+
+      display: block;
+
+      width: 42%;
+
+      height: 100%;
+
+      border-radius: 99px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #6475ff,
+          #b3bcff
+        );
+
+      animation:
+        load 2s ease-in-out infinite;
+    }
+
+
+    /* =========================
+       FLOATING DOTS
+    ========================= */
+
+    .dots {
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+    }
+
+    .dot {
+
+      position: absolute;
+
+      width: 3px;
+
+      height: 3px;
+
+      background: #9da9ff;
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 12px #7786ff;
+
+      opacity: 0.6;
+
+      animation:
+        drift linear infinite;
+    }
+
+    .d1 {
+
+      top: 18%;
+
+      left: 18%;
+
+      animation-duration: 8s;
+    }
+
+    .d2 {
+
+      top: 31%;
+
+      left: 79%;
+
+      animation-duration: 11s;
+
+      animation-delay: -3s;
+    }
+
+    .d3 {
+
+      top: 75%;
+
+      left: 72%;
+
+      animation-duration: 9s;
+
+      animation-delay: -5s;
+    }
+
+    .d4 {
+
+      top: 67%;
+
+      left: 14%;
+
+      animation-duration: 13s;
+
+      animation-delay: -7s;
+    }
+
+    .d5 {
+
+      top: 15%;
+
+      left: 57%;
+
+      animation-duration: 10s;
+
+      animation-delay: -2s;
+    }
+
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes enter {
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+    }
+
+
+    @keyframes fadeIn {
+
+      to {
+
+        opacity: 1;
+      }
+    }
+
+
+    @keyframes titleIn {
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+    }
+
+
+    @keyframes lineIn {
+
+      to {
+
+        width: 180px;
+      }
+    }
+
+
+    @keyframes shimmer {
+
+      to {
+
+        background-position:
+          -220% center;
+      }
+    }
+
+
+    @keyframes load {
+
+      0% {
+
+        transform:
+          translateX(250%);
+      }
+
+      50% {
+
+        transform:
+          translateX(50%);
+      }
+
+      100% {
+
+        transform:
+          translateX(-250%);
+      }
+    }
+
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+
+        opacity: 0.65;
+      }
+
+      50% {
+
+        opacity: 1;
+      }
+    }
+
+
+    @keyframes ambient {
+
+      from {
+
+        transform:
+          scale(1)
+          rotate(0deg);
+      }
+
+      to {
+
+        transform:
+          scale(1.08)
+          rotate(4deg);
+      }
+    }
+
+
+    @keyframes float {
+
+      0%,
+      100% {
+
+        transform:
+          translate(0,0)
+          rotate(0deg);
+      }
+
+      50% {
+
+        transform:
+          translate(25px,-18px)
+          rotate(8deg);
+      }
+    }
+
+
+    @keyframes drift {
+
+      0%,
+      100% {
+
+        transform:
+          translate(0,0);
+
+        opacity: 0.2;
+      }
+
+      50% {
+
+        transform:
+          translate(30px,-35px);
+
+        opacity: 0.9;
+      }
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .content {
+
+        padding:
+          30px 16px;
+      }
+
+      .brand {
+
+        margin-bottom: 26px;
+      }
+
+      .line {
+
+        margin-bottom: 30px;
+      }
+
+      .loader {
+
+        margin-top: 28px;
+      }
+    }
+
+
+    /* =========================
+       REDUCE MOTION
+    ========================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+  </style>
 </head>
+
+
 <body>
-<header class="header">
-  <a class="logo" href="#">STUDIO<span>.</span></a>
-  <nav>
-    <a href="#home" data-i18n="home">الرئيسية</a>
-    <a href="#store" data-i18n="store">المتجر</a>
-    <a href="#bundles" data-i18n="bundles">الباقات</a>
-    <a href="#about" data-i18n="about">من نحن</a>
-    <a href="#contact" data-i18n="contact">تواصل معنا</a>
-  </nav>
-  <div class="actions">
-    <select id="lang" aria-label="Language">
-      <option value="ar">العربية</option>
-      <option value="en">English</option>
-      <option value="ku">کوردی</option>
-    </select>
-    <button id="cartBtn" class="cart">🛒 <span id="cartCount">0</span></button>
-  </div>
-</header>
 
-<main>
-<section id="home" class="hero">
-  <div>
-    <span class="eyebrow" data-i18n="eyebrow">DIGITAL CREATIVE STUDIO</span>
-    <h1 data-i18n="heroTitle">تصاميم جاهزة.<br>عدّلها بطريقتك.</h1>
-    <p data-i18n="heroText">قوالب Canva احترافية تساعدك على إنشاء محتوى مميز خلال دقائق.</p>
-    <div class="heroBtns">
-      <a class="btn primary" href="#store" data-i18n="browse">تصفح التصاميم</a>
-      <a class="btn secondary" href="#bundles" data-i18n="explore">اكتشف الباقات</a>
+
+  <!-- Background Grid -->
+
+  <div class="grid"></div>
+
+
+  <!-- Decorative Circles -->
+
+  <div class="orb one"></div>
+
+  <div class="orb two"></div>
+
+
+  <!-- Floating Particles -->
+
+  <div class="dots">
+
+    <i class="dot d1"></i>
+
+    <i class="dot d2"></i>
+
+    <i class="dot d3"></i>
+
+    <i class="dot d4"></i>
+
+    <i class="dot d5"></i>
+
+  </div>
+
+
+  <!-- Main Content -->
+
+  <main class="content">
+
+
+    <!-- Brand -->
+
+    <div class="brand">
+
+      <span>i.</span>b2002
+
     </div>
-  </div>
-  <div class="mockups">
-    <div class="mock m1"><b>REELS</b><small>CREATIVE<br>CONTENT</small></div>
-    <div class="mock m2"><b>INSTAGRAM</b><small>MAKE IT<br>YOUR OWN</small></div>
-    <div class="mock m3"><b>ADS</b><small>SELL<br>SMARTER</small></div>
-  </div>
-</section>
 
-<section class="section" id="store">
-  <div class="sectionHead"><div><span class="eyebrow">SHOP</span><h2 data-i18n="best">الأكثر طلبًا</h2></div>
-  <input id="search" type="search" placeholder="ابحث عن تصميم..." aria-label="Search"></div>
-  <div class="categories">
-    <button class="active" data-cat="all" data-i18n="all">الكل</button>
-    <button data-cat="instagram">Instagram</button><button data-cat="reels">Reels</button>
-    <button data-cat="ads" data-i18n="ads">إعلانات</button><button data-cat="business" data-i18n="business">أعمال</button>
-  </div>
-  <div id="products" class="grid"></div>
-</section>
 
-<section class="features">
-  <div><strong>⚡</strong><h3 data-i18n="fast">توفير الوقت</h3><p data-i18n="fastText">ابدأ من قالب جاهز بدلًا من الصفر.</p></div>
-  <div><strong>🎨</strong><h3 data-i18n="pro">تصاميم احترافية</h3><p data-i18n="proText">هوية بصرية عصرية وقابلة للتعديل.</p></div>
-  <div><strong>✏️</strong><h3 data-i18n="easy">سهلة التعديل</h3><p data-i18n="easyText">عدّل النصوص والألوان والصور في Canva.</p></div>
-  <div><strong>📱</strong><h3 data-i18n="social">للسوشيال ميديا</h3><p data-i18n="socialText">مقاسات مناسبة للمحتوى الرقمي.</p></div>
-</section>
+    <!-- Decorative Line -->
 
-<section id="bundles" class="section bundles">
-  <div class="sectionHead"><div><span class="eyebrow">BUNDLES</span><h2 data-i18n="bundleTitle">اختر الباقة المناسبة لك</h2></div></div>
-  <div class="bundleGrid">
-    <article><span>STARTER</span><b>10</b><small>Templates</small><button class="btn secondary" onclick="addBundle('Starter Bundle',9)">شراء — $9</button></article>
-    <article class="featured"><em data-i18n="popular">الأكثر مبيعًا</em><span>PRO</span><b>30</b><small>Templates</small><button class="btn primary" onclick="addBundle('Pro Bundle',19)">شراء — $19</button></article>
-    <article><span>ULTIMATE</span><b>60+</b><small>Templates</small><button class="btn secondary" onclick="addBundle('Ultimate Bundle',35)">شراء — $35</button></article>
-  </div>
-</section>
+    <div class="line"></div>
 
-<section class="how section">
-  <span class="eyebrow">HOW IT WORKS</span><h2 data-i18n="howTitle">كيف تحصل على التصميم؟</h2>
-  <div class="steps"><div><b>01</b><h3 data-i18n="step1">اختر التصميم</h3></div><div><b>02</b><h3 data-i18n="step2">ادفع بأمان</h3></div><div><b>03</b><h3 data-i18n="step3">استلم رابط Canva</h3></div></div>
-</section>
 
-<section id="about" class="about section"><div><span class="eyebrow">ABOUT</span><h2 data-i18n="aboutTitle">نصمم لك نقطة بداية أفضل.</h2></div><p data-i18n="aboutText">متجر رقمي للقوالب الاحترافية لأصحاب المشاريع وصناع المحتوى والمسوقين. عدّل القالب في Canva واجعله مناسبًا لعلامتك.</p></section>
-</main>
+    <!-- Main Kurdish Title -->
 
-<footer id="contact"><div class="logo">STUDIO<span>.</span></div><p data-i18n="footer">قوالب رقمية احترافية لصناعة محتوى أفضل.</p><div>Instagram · TikTok · WhatsApp</div><small>© 2026 Studio Templates</small></footer>
+    <h1 class="title">
 
-<div id="cartPanel" class="overlay"><div class="cartPanel"><button class="close" onclick="closeCart()">×</button><h2 data-i18n="cartTitle">سلة المشتريات</h2><div id="cartItems"></div><div class="total"><span data-i18n="total">الإجمالي</span><b id="total">$0</b></div><button class="btn primary full" onclick="checkout()" data-i18n="checkout">إتمام الشراء</button><p class="note" data-i18n="paymentNote">هذه نسخة تجريبية. اربط بوابة الدفع قبل الإطلاق.</p></div></div>
-<script src="script.js"></script>
-</body></html>
+      Di nêzîk de
+
+    </h1>
+
+
+    <!-- Description -->
+
+    <p class="subtitle">
+
+      Malper niha tê amadekirin... Hinekî bisekinin.
+
+    </p>
+
+
+    <!-- Loading Animation -->
+
+    <div class="loader">
+
+      <span></span>
+
+    </div>
+
+
+  </main>
+
+
+</body>
+</html>
