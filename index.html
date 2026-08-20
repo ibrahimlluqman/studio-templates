@@ -1,754 +1,976 @@
 <!DOCTYPE html>
 <html lang="ku" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-  <meta name="theme-color" content="#050711">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-  <title>1b2002 | ل نێـزیک</title>
+    <meta name="theme-color"
+          content="#050711">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>i.b2002</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-        rel="stylesheet">
 
-  <style>
+    <!-- Fonts -->
 
-    /* =========================
-       RESET
-    ========================= */
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
 
 
-    /* =========================
-       BODY
-    ========================= */
+    <style>
 
-    body {
+        /* =========================
+           RESET
+        ========================= */
 
-      font-family: "Cairo", sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      background: #050711;
 
-      color: white;
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
 
-      display: flex;
 
-      align-items: center;
+        /* =========================
+           BODY
+        ========================= */
 
-      justify-content: center;
+        body {
 
-      position: relative;
-    }
+            font-family: "Cairo", sans-serif;
 
+            background: #050711;
 
-    /* =========================
-       BACKGROUND LIGHT
-    ========================= */
+            color: #ffffff;
 
-    body::before {
+            display: flex;
 
-      content: "";
+            justify-content: center;
 
-      position: absolute;
+            align-items: center;
 
-      inset: -30%;
+            position: relative;
+        }
 
-      background:
 
-        radial-gradient(
-          circle at 50% 45%,
-          rgba(73, 102, 255, 0.18),
-          transparent 25%
-        ),
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
 
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(0, 221, 255, 0.10),
-          transparent 22%
-        ),
+        body::before {
 
-        radial-gradient(
-          circle at 80% 75%,
-          rgba(139, 92, 246, 0.10),
-          transparent 25%
-        );
+            content: "";
 
-      filter: blur(30px);
+            position: absolute;
 
-      animation:
-        ambient 9s ease-in-out infinite alternate;
-    }
+            inset: -30%;
 
+            background:
 
-    /* =========================
-       GRID
-    ========================= */
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(73, 102, 255, 0.20),
+                    transparent 25%
+                ),
 
-    .grid {
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(0, 221, 255, 0.10),
+                    transparent 22%
+                ),
 
-      position: absolute;
+                radial-gradient(
+                    circle at 80% 75%,
+                    rgba(139, 92, 246, 0.10),
+                    transparent 25%
+                );
 
-      inset: 0;
+            filter: blur(35px);
 
-      opacity: 0.16;
+            animation:
+                ambient 9s ease-in-out infinite alternate;
+        }
 
-      background-image:
 
-        linear-gradient(
-          rgba(255,255,255,0.06) 1px,
-          transparent 1px
-        ),
+        /* =========================
+           GRID
+        ========================= */
 
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0.06) 1px,
-          transparent 1px
-        );
+        .grid {
 
-      background-size: 55px 55px;
+            position: absolute;
 
-      mask-image:
-        linear-gradient(
-          to bottom,
-          transparent,
-          black 25%,
-          black 75%,
-          transparent
-        );
-    }
+            inset: 0;
 
+            opacity: 0.13;
 
-    /* =========================
-       DECORATIVE ORBS
-    ========================= */
+            background-image:
 
-    .orb {
+                linear-gradient(
+                    rgba(255,255,255,0.07) 1px,
+                    transparent 1px
+                ),
 
-      position: absolute;
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.07) 1px,
+                    transparent 1px
+                );
 
-      width: 260px;
+            background-size: 55px 55px;
 
-      height: 260px;
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    black 25%,
+                    black 75%,
+                    transparent
+                );
+        }
 
-      border: 1px solid rgba(116,142,255,0.18);
 
-      border-radius: 50%;
+        /* =========================
+           ORBS
+        ========================= */
 
-      animation:
-        float 8s ease-in-out infinite;
-    }
+        .orb {
 
-    .orb.one {
+            position: absolute;
 
-      top: -90px;
+            width: 280px;
 
-      right: -80px;
-    }
+            height: 280px;
 
-    .orb.two {
+            border-radius: 50%;
 
-      bottom: -130px;
+            border:
+                1px solid
+                rgba(116,142,255,0.18);
 
-      left: -90px;
+            animation:
+                float 8s ease-in-out infinite;
+        }
 
-      animation-delay: -3s;
-    }
 
-    .orb::after {
+        .orb.one {
 
-      content: "";
+            top: -100px;
 
-      position: absolute;
+            right: -90px;
+        }
 
-      inset: 28px;
 
-      border: 1px solid rgba(116,142,255,0.10);
+        .orb.two {
 
-      border-radius: 50%;
-    }
+            bottom: -140px;
 
+            left: -100px;
 
-    /* =========================
-       CONTENT
-    ========================= */
+            animation-delay: -3s;
+        }
 
-    .content {
 
-      position: relative;
+        .orb::after {
 
-      z-index: 2;
+            content: "";
 
-      width: min(900px, 90vw);
+            position: absolute;
 
-      text-align: center;
+            inset: 30px;
 
-      padding: 40px 20px;
-    }
+            border-radius: 50%;
 
+            border:
+                1px solid
+                rgba(116,142,255,0.10);
+        }
 
-    /* =========================
-       LOGO / BRAND
-    ========================= */
 
-    .brand {
+        /* =========================
+           PARTICLES
+        ========================= */
 
-      font-family: "Space Grotesk", sans-serif;
+        .dots {
 
-      font-size:
-        clamp(18px, 2.3vw, 28px);
+            position: absolute;
 
-      font-weight: 700;
+            inset: 0;
 
-      letter-spacing: 0.12em;
+            pointer-events: none;
+        }
 
-      color: white;
 
-      margin-bottom: 34px;
+        .dot {
 
-      opacity: 0;
+            position: absolute;
 
-      transform: translateY(-18px);
+            width: 3px;
 
-      animation:
-        enter 0.9s 0.15s
-        cubic-bezier(.2,.8,.2,1)
-        forwards;
-    }
+            height: 3px;
 
-    .brand span {
+            border-radius: 50%;
 
-      display: inline-block;
+            background: #9da9ff;
 
-      color: #7c8cff;
+            box-shadow:
+                0 0 12px #7786ff;
 
-      animation:
-        pulse 2.4s ease-in-out infinite;
-    }
+            opacity: 0.5;
 
+            animation:
+                drift linear infinite;
+        }
 
-    /* =========================
-       LINE
-    ========================= */
 
-    .line {
+        .d1 {
 
-      width: 0;
+            top: 18%;
 
-      height: 1px;
+            left: 18%;
 
-      margin: 0 auto 38px;
+            animation-duration: 8s;
+        }
 
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #7c8cff,
-          transparent
-        );
 
-      animation:
-        lineIn 1.1s 0.55s ease forwards;
-    }
+        .d2 {
 
+            top: 31%;
 
-    /* =========================
-       MAIN TITLE
-    ========================= */
+            left: 79%;
 
-    .title {
+            animation-duration: 11s;
 
-      font-size:
-        clamp(48px, 9vw, 105px);
+            animation-delay: -3s;
+        }
 
-      line-height: 1.08;
 
-      font-weight: 700;
+        .d3 {
 
-      letter-spacing: -0.045em;
+            top: 75%;
 
-      margin-bottom: 18px;
+            left: 72%;
 
-      background:
-        linear-gradient(
-          90deg,
-          #ffffff 0%,
-          #b9c1ff 48%,
-          #ffffff 100%
-        );
+            animation-duration: 9s;
 
-      -webkit-background-clip: text;
+            animation-delay: -5s;
+        }
 
-      background-clip: text;
 
-      color: transparent;
+        .d4 {
 
-      background-size: 220% auto;
+            top: 67%;
 
-      opacity: 0;
+            left: 14%;
 
-      transform: translateY(20px);
+            animation-duration: 13s;
 
-      animation:
+            animation-delay: -7s;
+        }
 
-        titleIn 1s 0.8s
-        cubic-bezier(.2,.8,.2,1)
-        forwards,
 
-        shimmer 5s 2s linear infinite;
-    }
+        .d5 {
 
+            top: 15%;
 
-    /* =========================
-       SUBTITLE
-    ========================= */
+            left: 57%;
 
-    .subtitle {
+            animation-duration: 10s;
 
-      color: #a6adc4;
+            animation-delay: -2s;
+        }
 
-      font-size:
-        clamp(14px, 2vw, 18px);
 
-      font-weight: 400;
+        /* =========================
+           MAIN CONTENT
+        ========================= */
 
-      opacity: 0;
+        .content {
 
-      animation:
-        fadeIn 1s 1.25s ease forwards;
-    }
+            position: relative;
 
+            z-index: 5;
 
-    /* =========================
-       LOADER
-    ========================= */
+            width: 90%;
 
-    .loader {
+            max-width: 1000px;
 
-      width: 170px;
+            text-align: center;
+        }
 
-      height: 3px;
 
-      margin: 34px auto 0;
+        /* =========================
+           BRAND
+        ========================= */
 
-      border-radius: 99px;
+        .brand {
 
-      background:
-        rgba(255,255,255,0.08);
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-      overflow: hidden;
+            font-size:
+                clamp(20px, 3vw, 30px);
 
-      opacity: 0;
+            font-weight: 700;
 
-      animation:
-        fadeIn 1s 1.5s ease forwards;
-    }
+            letter-spacing: 0.12em;
 
-    .loader span {
+            color: #ffffff;
 
-      display: block;
+            margin-bottom: 30px;
 
-      width: 42%;
+            opacity: 0;
 
-      height: 100%;
+            transform: translateY(-20px);
 
-      border-radius: 99px;
+            animation:
+                brandIn
+                1s
+                0.2s
+                cubic-bezier(.2,.8,.2,1)
+                forwards;
+        }
 
-      background:
-        linear-gradient(
-          90deg,
-          #6475ff,
-          #b3bcff
-        );
 
-      animation:
-        load 2s ease-in-out infinite;
-    }
+        .brand span {
 
+            color: #7c8cff;
 
-    /* =========================
-       FLOATING DOTS
-    ========================= */
+            animation:
+                brandGlow
+                2.5s
+                ease-in-out
+                infinite;
+        }
 
-    .dots {
 
-      position: absolute;
+        /* =========================
+           LINE
+        ========================= */
 
-      inset: 0;
+        .line {
 
-      pointer-events: none;
-    }
+            width: 0;
 
-    .dot {
+            height: 1px;
 
-      position: absolute;
+            margin: 0 auto 42px;
 
-      width: 3px;
+            background:
 
-      height: 3px;
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #7c8cff,
+                    transparent
+                );
 
-      background: #9da9ff;
+            animation:
+                lineIn
+                1.2s
+                0.6s
+                ease
+                forwards;
+        }
 
-      border-radius: 50%;
 
-      box-shadow:
-        0 0 12px #7786ff;
+        /* =========================
+           TITLE
+        ========================= */
 
-      opacity: 0.6;
+        .title {
 
-      animation:
-        drift linear infinite;
-    }
+            min-height: 1.2em;
 
-    .d1 {
+            font-size:
+                clamp(48px, 9vw, 105px);
 
-      top: 18%;
+            line-height: 1.15;
 
-      left: 18%;
+            font-weight: 700;
 
-      animation-duration: 8s;
-    }
+            letter-spacing: -0.04em;
 
-    .d2 {
+            margin-bottom: 22px;
 
-      top: 31%;
+            background:
 
-      left: 79%;
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #c0c7ff,
+                    #ffffff
+                );
 
-      animation-duration: 11s;
+            background-size: 200% auto;
 
-      animation-delay: -3s;
-    }
+            -webkit-background-clip: text;
 
-    .d3 {
+            background-clip: text;
 
-      top: 75%;
+            color: transparent;
 
-      left: 72%;
+            animation:
+                textShine
+                5s
+                linear
+                infinite;
 
-      animation-duration: 9s;
+            opacity: 0;
 
-      animation-delay: -5s;
-    }
+            transform:
+                translateY(30px)
+                scale(0.96);
 
-    .d4 {
+            filter: blur(8px);
 
-      top: 67%;
+            transition:
 
-      left: 14%;
+                opacity 0.55s ease,
 
-      animation-duration: 13s;
+                transform
+                0.55s
+                cubic-bezier(.2,.8,.2,1),
 
-      animation-delay: -7s;
-    }
+                filter
+                0.55s ease;
+        }
 
-    .d5 {
 
-      top: 15%;
+        /* =========================
+           TITLE SHOW
+        ========================= */
 
-      left: 57%;
+        .title.show {
 
-      animation-duration: 10s;
+            opacity: 1;
 
-      animation-delay: -2s;
-    }
+            transform:
+                translateY(0)
+                scale(1);
 
+            filter: blur(0);
+        }
 
-    /* =========================
-       ANIMATIONS
-    ========================= */
 
-    @keyframes enter {
+        /* =========================
+           TITLE HIDE
+        ========================= */
 
-      to {
+        .title.hide {
 
-        opacity: 1;
+            opacity: 0;
 
-        transform: translateY(0);
-      }
-    }
+            transform:
+                translateY(-30px)
+                scale(1.04);
 
+            filter: blur(8px);
+        }
 
-    @keyframes fadeIn {
 
-      to {
+        /* =========================
+           SUBTITLE
+        ========================= */
 
-        opacity: 1;
-      }
-    }
+        .subtitle {
 
+            color: #a6adc4;
 
-    @keyframes titleIn {
+            font-size:
+                clamp(14px, 2vw, 18px);
 
-      to {
+            font-weight: 400;
 
-        opacity: 1;
+            opacity: 0;
 
-        transform: translateY(0);
-      }
-    }
+            animation:
+                subtitleIn
+                1s
+                1.2s
+                ease
+                forwards;
+        }
 
 
-    @keyframes lineIn {
+        /* =========================
+           LOADER
+        ========================= */
 
-      to {
+        .loader {
 
-        width: 180px;
-      }
-    }
+            width: 180px;
 
+            height: 3px;
 
-    @keyframes shimmer {
+            margin:
+                35px auto 0;
 
-      to {
+            border-radius: 100px;
 
-        background-position:
-          -220% center;
-      }
-    }
+            background:
+                rgba(255,255,255,0.08);
 
+            overflow: hidden;
 
-    @keyframes load {
+            opacity: 0;
 
-      0% {
+            animation:
+                subtitleIn
+                1s
+                1.5s
+                ease
+                forwards;
+        }
 
-        transform:
-          translateX(250%);
-      }
 
-      50% {
+        .loader span {
 
-        transform:
-          translateX(50%);
-      }
+            display: block;
 
-      100% {
+            width: 40%;
 
-        transform:
-          translateX(-250%);
-      }
-    }
+            height: 100%;
 
+            border-radius: 100px;
 
-    @keyframes pulse {
+            background:
 
-      0%,
-      100% {
+                linear-gradient(
+                    90deg,
+                    #6475ff,
+                    #b9c0ff
+                );
 
-        opacity: 0.65;
-      }
+            animation:
+                loading
+                2s
+                ease-in-out
+                infinite;
+        }
 
-      50% {
 
-        opacity: 1;
-      }
-    }
+        /* =========================
+           ANIMATIONS
+        ========================= */
 
+        @keyframes brandIn {
 
-    @keyframes ambient {
+            from {
 
-      from {
+                opacity: 0;
 
-        transform:
-          scale(1)
-          rotate(0deg);
-      }
+                transform:
+                    translateY(-20px);
+            }
 
-      to {
+            to {
 
-        transform:
-          scale(1.08)
-          rotate(4deg);
-      }
-    }
+                opacity: 1;
 
+                transform:
+                    translateY(0);
+            }
+        }
 
-    @keyframes float {
 
-      0%,
-      100% {
+        @keyframes subtitleIn {
 
-        transform:
-          translate(0,0)
-          rotate(0deg);
-      }
+            from {
 
-      50% {
+                opacity: 0;
+            }
 
-        transform:
-          translate(25px,-18px)
-          rotate(8deg);
-      }
-    }
+            to {
 
+                opacity: 1;
+            }
+        }
 
-    @keyframes drift {
 
-      0%,
-      100% {
+        @keyframes lineIn {
 
-        transform:
-          translate(0,0);
+            from {
 
-        opacity: 0.2;
-      }
+                width: 0;
+            }
 
-      50% {
+            to {
 
-        transform:
-          translate(30px,-35px);
+                width: 190px;
+            }
+        }
 
-        opacity: 0.9;
-      }
-    }
 
+        @keyframes brandGlow {
 
-    /* =========================
-       MOBILE
-    ========================= */
+            0%,
+            100% {
 
-    @media (max-width: 600px) {
+                opacity: 0.65;
+            }
 
-      .content {
+            50% {
 
-        padding:
-          30px 16px;
-      }
+                opacity: 1;
+            }
+        }
 
-      .brand {
 
-        margin-bottom: 26px;
-      }
+        @keyframes textShine {
 
-      .line {
+            0% {
 
-        margin-bottom: 30px;
-      }
+                background-position:
+                    200% center;
+            }
 
-      .loader {
+            100% {
 
-        margin-top: 28px;
-      }
-    }
+                background-position:
+                    -200% center;
+            }
+        }
 
 
-    /* =========================
-       REDUCE MOTION
-    ========================= */
+        @keyframes loading {
 
-    @media (prefers-reduced-motion: reduce) {
+            0% {
 
-      *,
-      *::before,
-      *::after {
+                transform:
+                    translateX(260%);
+            }
 
-        animation-duration: 0.01ms !important;
+            50% {
 
-        animation-iteration-count: 1 !important;
-      }
-    }
+                transform:
+                    translateX(50%);
+            }
 
-  </style>
+            100% {
+
+                transform:
+                    translateX(-260%);
+            }
+        }
+
+
+        @keyframes ambient {
+
+            from {
+
+                transform:
+                    scale(1)
+                    rotate(0deg);
+            }
+
+            to {
+
+                transform:
+                    scale(1.08)
+                    rotate(4deg);
+            }
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+
+                transform:
+                    translate(0,0)
+                    rotate(0deg);
+            }
+
+            50% {
+
+                transform:
+                    translate(25px,-20px)
+                    rotate(8deg);
+            }
+        }
+
+
+        @keyframes drift {
+
+            0%,
+            100% {
+
+                transform:
+                    translate(0,0);
+
+                opacity: 0.15;
+            }
+
+            50% {
+
+                transform:
+                    translate(30px,-35px);
+
+                opacity: 0.9;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .content {
+
+                width: 94%;
+            }
+
+
+            .brand {
+
+                margin-bottom: 25px;
+            }
+
+
+            .line {
+
+                margin-bottom: 32px;
+            }
+
+
+            .loader {
+
+                width: 150px;
+            }
+        }
+
+
+        /* =========================
+           REDUCE MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+            }
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- Background Grid -->
+    <!-- Background -->
 
-  <div class="grid"></div>
-
-
-  <!-- Decorative Circles -->
-
-  <div class="orb one"></div>
-
-  <div class="orb two"></div>
+    <div class="grid"></div>
 
 
-  <!-- Floating Particles -->
+    <!-- Decorative Orbs -->
 
-  <div class="dots">
+    <div class="orb one"></div>
 
-    <i class="dot d1"></i>
-
-    <i class="dot d2"></i>
-
-    <i class="dot d3"></i>
-
-    <i class="dot d4"></i>
-
-    <i class="dot d5"></i>
-
-  </div>
+    <div class="orb two"></div>
 
 
-  <!-- Main Content -->
+    <!-- Floating Particles -->
 
-  <main class="content">
+    <div class="dots">
 
+        <i class="dot d1"></i>
 
-    <!-- Brand -->
+        <i class="dot d2"></i>
 
-    <div class="brand">
+        <i class="dot d3"></i>
 
-      <span>i.</span>b2002
+        <i class="dot d4"></i>
+
+        <i class="dot d5"></i>
 
     </div>
 
 
-    <!-- Decorative Line -->
+    <!-- Main -->
 
-    <div class="line"></div>
-
-
-    <!-- Main Kurdish Title -->
-
-    <h1 class="title">
-
-      Di nêzîk de
-
-    </h1>
+    <main class="content">
 
 
-    <!-- Description -->
+        <!-- Logo -->
 
-    <p class="subtitle">
+        <div class="brand">
 
-      Malper niha tê amadekirin... Hinekî bisekinin.
+            <span>i.</span>b2002
 
-    </p>
-
-
-    <!-- Loading Animation -->
-
-    <div class="loader">
-
-      <span></span>
-
-    </div>
+        </div>
 
 
-  </main>
+        <!-- Line -->
+
+        <div class="line"></div>
+
+
+        <!-- Changing Text -->
+
+        <h1
+            class="title"
+            id="comingText">
+
+            ل نـێـزیک
+
+        </h1>
+
+
+        <!-- Description -->
+
+        <p class="subtitle">
+
+            Malper niha tê amadekirin...
+
+        </p>
+
+
+        <!-- Loading -->
+
+        <div class="loader">
+
+            <span></span>
+
+        </div>
+
+
+    </main>
+
+
+    <script>
+
+        /* =========================
+           MULTI LANGUAGE TEXT
+        ========================= */
+
+        const textElement =
+            document.getElementById(
+                "comingText"
+            );
+
+
+        const languages = [
+
+            "ل نـێـزیک",
+
+            "Coming Soon",
+
+            "قريباً"
+
+        ];
+
+
+        let currentIndex = 0;
+
+
+        /* =========================
+           FIRST APPEARANCE
+        ========================= */
+
+        setTimeout(() => {
+
+            textElement.classList.add(
+                "show"
+            );
+
+        }, 100);
+
+
+        /* =========================
+           CHANGE TEXT
+           EVERY 2 SECONDS
+        ========================= */
+
+        setInterval(() => {
+
+
+            /* Hide current text */
+
+            textElement.classList.remove(
+                "show"
+            );
+
+            textElement.classList.add(
+                "hide"
+            );
+
+
+            /* Wait for animation */
+
+            setTimeout(() => {
+
+
+                /* Next language */
+
+                currentIndex++;
+
+
+                if (
+                    currentIndex >=
+                    languages.length
+                ) {
+
+                    currentIndex = 0;
+
+                }
+
+
+                /* Change text */
+
+                textElement.textContent =
+                    languages[currentIndex];
+
+
+                /* Show new text */
+
+                textElement.classList.remove(
+                    "hide"
+                );
+
+                textElement.classList.add(
+                    "show"
+                );
+
+
+            }, 550);
+
+
+        }, 2000);
+
+    </script>
 
 
 </body>
+
 </html>
